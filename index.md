@@ -6,7 +6,7 @@ layout: default
     {% for repo in site.github.public_repositories limit:28 %}
  
         {% if repo.fork != true %}
-                * [link]({{ repo.homepage }}){{ repo.name }}
+                * {{ [repo.homepage] }}{{ repo.name }}
         {% endif %}
  
     {% endfor %}
