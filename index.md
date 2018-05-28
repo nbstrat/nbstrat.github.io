@@ -3,4 +3,14 @@ layout: default
 ---
  # index md file
 
-The project is called {{ site.github.dotfiles }}
+    {% for repo in site.github.public_repositories limit:28 %}
+ 
+        {% if repo.fork != true %}
+            <li class="repo">
+               
+                <a href="{{ repo.homepage }}">{{ repo.name }}</a>
+             
+            </li>
+        {% endif %}
+ 
+    {% endfor %}
