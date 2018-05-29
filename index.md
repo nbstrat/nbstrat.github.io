@@ -3,8 +3,8 @@ layout: default
 ---
  # index md file
 
-    {% for repo in site.github.public_repositories limit:28 %}
+    {% for repo in site.github.public_repositories %}
          {% if repo.fork != true %}
-                 {{ '[' repo.homepage ']' }}{{ repo.name }} ] 
+                 {{ '[' repo.homepage ']' }}{{ repo.name }}  
          {% endif %}
     {% endfor %}
