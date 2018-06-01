@@ -1,9 +1,9 @@
 <ul>
 {% for repo in site.github.public_repositories %}
-  {% if repo.fork != true %}
+
     <li>
           {{  repo.homepage }}{{ repo.name }}
+          {{ repository.html_url }}
     </li>
-  {% endif %}
-  {% endfor %}
+{% endfor %}
 </ul>
