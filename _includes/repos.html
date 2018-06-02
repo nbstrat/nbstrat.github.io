@@ -14,7 +14,7 @@
 <h3>Forked Projects</h3>
 <ul>
 {% for repo in site.github.public_repositories %}
-  {% if repo.fork === true %}
+  {% if repo.fork != true %}
      <li>
            {{  repo.homepage }}{{ repo.name }}
      </li>
