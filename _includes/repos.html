@@ -4,7 +4,7 @@
 {% for repo in site.github.public_repositories %}
 {% if repo.fork != true %}
     <li>
-          {{  repo.homepage }}{{ repo.name }}
+          <a href="{{ repo.homepage }}" title="{{ repo.name }}" />
           -
           {{ repo.html_url }}
     </li>
