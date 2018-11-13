@@ -13,7 +13,7 @@
     This is important!
 </p>
 
-<p>I created a git alias so I wouldn't have to specify the path the jar file. This is optional and is only to make clean-ups a little easier.</p>
+<p>I created a git alias so I wouldn't have to specify the path the jar file. This is optional and is only to make my life easier.</p>
 <ul>
     <li>alias bfg='java -jar /c/Users/&lt;me&gt;/bfg-1.12.16.jar'</li>
 </ul>
@@ -33,8 +33,12 @@
     <li>java -jar path/to/bfg-1.12.16.jar --delete-files big-file-to-remove.xml --no-blob-protection  /c/path/to/cloned/repo.git</li>
 </ul>
 
-<p>You do not specify the path to the file to remove. This little bit of information has bitten more than once and it is important to remind yourself, that you are not removing an actual file, but removing objects that contain reference pointers to that file. The important thing to understand here is that each specific verion 
-    of a file, folder, or commit is an object in Git and it is assigned an immutable hash id. The hash depends not only on the current content being changed, but the also the 
-    commits that came before it. BFG is removing the history of that file, which changes the has of that commit, and every commit that came after it just like you would do with filter-branch, but only faster! </p>
+<p>You do not specify the path to the file to remove. This little bit of information has bitten more than once and it is important to remind yourself,
+    that you are not removing an actual file, but removing objects that contain reference pointers to that file.
+    The important thing to understand here is that each specific version 
+    of a file, folder, or commit is an object in Git and it is assigned an immutable hash id. The hash depends not only on the current content being changed,
+    but the also commits that came before it.
+    BFG is removing the history of that file, which changes the hash of that commit, and every commit that came after 
+    it just like you would do with filter-branch, but only faster! </p>
 <p> BFC will also update commit messages that include the hash that is being rewritten to include the updated commit hash.</p>
 
