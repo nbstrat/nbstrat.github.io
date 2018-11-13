@@ -1,0 +1,40 @@
+
+<h3>My BFG Cheat Sheet</h3>
+
+<p>My configuration for using BFG Repo-Cleaner</p>
+<ul>
+    <li>bfg-1.12.16.jar is located in my HOME directory</li>
+    <li>\c\Users\&lt;me&gt;\</li>
+</ul>
+
+
+<p>
+    Follow the clone guildelines as outlined at <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a> using the --mirror flag.
+    This is important!
+</p>
+
+<p>I created a git alias so I wouldn't have to specify the path the jar file. This is optional and is only to make clean-ups a little easier.</p>
+<ul>
+    <li>alias bfg='java -jar /c/Users/&lt;me&gt;/bfg-1.12.16.jar'</li>
+</ul>
+
+<p>Without the alias, you will need to specify the path to the jar file which becomes very tedious. Without the alias, you will need to execute the command like this:</p>
+<ul>
+    <li>java -jar /c/Users/&lt;me&gt;/bfg-1.12.16.jar --delete-files big-file-to-remove.alis.xml --no-blob-protection  /c/path/to/cloned/repo.git</li>
+</ul>
+
+<p>With the alias, you can simplify the command like this:</p>
+<ul>
+    <li>bfg --delete-files big-file-to-remove.xml --no-blob-protection  /c/path/to/cloned/repo.git</li>
+</ul>
+
+<p>Either way, the format follows this pattern:</p>
+<ul>
+    <li>java -jar path/to/bfg-1.12.16.jar --delete-files big-file-to-remove.xml --no-blob-protection  /c/path/to/cloned/repo.git</li>
+</ul>
+
+<p>You do not specify the path to the file to remove. This little bit of information has bitten more than once and it is important to remind yourself, that you are not removing an actual file, but removing objects that contain reference pointers to that file. The important thing to understand here is that each specific verion 
+    of a file, folder, or commit is an object in Git and it is assigned an immutable hash id. The hash depends not only on the current content being changed, but the also the 
+    commits that came before it. BFG is removing the history of that file, which changes the has of that commit, and every commit that came after it just like you would do with filter-branch, but only faster! </p>
+<p> BFC will also update commit messages that include the hash that is being rewritten to include the updated commit hash.</p>
+
