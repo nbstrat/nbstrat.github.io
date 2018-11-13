@@ -6,5 +6,3 @@ layout: default
 
 
 [My BFG Repo Cleaner Notes](/bfg.html)
-
-{% include bfg.html %}
