@@ -2,7 +2,7 @@
 
 ### Keep it simple.
 
-Test are meant to verify that some piece of performs some operation. If you are having trouble identifying how to create the test, you probably need to rethink what you are coding.
+Test are meant to verify that some piece of code performs some specific operation. If you are having trouble identifying how to create the test, you probably need to rethink what you are coding.
 
 Code wants to be simple - don't stand in the way of that dream.
 
