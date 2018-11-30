@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[My Profile](https://github.com/nbstrat)
+[My GitHub Profile](https://github.com/nbstrat)
 
 {% include repos.html %}
 
